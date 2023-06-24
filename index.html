@@ -1,0 +1,81 @@
+<!--
+    File: index.html
+    GUI Assignment: Creating JS multiplication table - With Validation
+    Ethan Rosenbaum, UML Computer Science, ethan_rosenbaum@student.uml.edu
+
+    Copyright (c) 2023 by Ethan. All Rights reserved. May be
+    freely copied or excerpted for educational purposes with credit to the author.
+
+    Header taken from HW assignment 1 example by Wenjin Zhou.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/multitablestyle.css">
+        <title>Multiplication Table</title>
+    </head>
+    <body>
+
+        <header>
+            <h1>Multiplication Table</h1>
+            <p>
+                Please enter two ranges of numbers in the fields below.
+                The values given must be between -50 and 50.
+
+            </p>
+            <p>
+                Values will be swapped if they are given in the wrong fields, i.e. the 
+                value given for the X minimum is larger than the X maximum value provided.
+            </p>
+        </header>
+
+        <!-- Removed 'onsubmit' in favor of event handler in JS -->
+        <div id="input_form">
+            <form id="multitable_form">
+                <label for="xrangelow">Minimum X Value</label><br>
+                <input type="text" id="xrangelow" name="minimum_x_value" value="0"><br>
+
+                <label for="xrangehi">Maximum X Value</label><br>
+                <input type="text" id="xrangehi" name="maximum_x_value" value="5"><br>
+
+                <label for="yrangelow">Minimum Y Value</label><br>
+                <input type="text" id="yrangelow" name="minimum_y_value" value="0"><br>
+
+                <label for="yrangehi">Maximum Y Value</label><br>
+                <input type="text" id="yrangehi" name="maximum_y_value" value="5"><br>
+ 
+            </form>
+            <input 
+            id="generate-table"
+            type="submit"
+            name="generate" 
+            value="Generate">  
+        </div>
+
+        <!-- Populated via JS script below - contains non-error status messages -->
+        <div id="status"></div>
+
+        <!-- Populated via JS script below - contains generated table -->
+        <div id="multitable"></div>
+
+        <!-- Javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="js/multitable.js"></script> 
+
+        <footer>
+            <h2>Copyright &copy; Ethan Rosenbaum 2023</h2>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                        alt="Valid CSS!">
+                </a>
+            </p>
+        </footer>
+    </body>
+</html>
